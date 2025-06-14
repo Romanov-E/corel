@@ -24,6 +24,7 @@ display: flex;
 }
 
 .big-text {
+    color: white;
     font-weight: bold;
     font-size: 6rem;
     line-height: 1;
