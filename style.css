@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* запрещает прокрутку */
+}
+
 body {
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,7 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 
