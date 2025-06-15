@@ -15,7 +15,7 @@ body {
     color: white;
     text-shadow: 2px 2px 5px #000;
     background-image: url("./corl.jpg");
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
