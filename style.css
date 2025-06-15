@@ -19,6 +19,15 @@ body {
     overflow-x: hidden;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
 .banner {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5); /* черный, 50% прозрачности */
