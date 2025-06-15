@@ -40,12 +40,12 @@ body {
 }
 
 .big-text {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* 🔁 адаптивный размер */
+    font-size: clamp(2rem, 12vw, 6rem); /* 🔁 адаптивный размер */
     font-weight: bold;
     margin: 0 1vw;
     min-width: 60px;
 }
 
 .countdown-el span {
-    font-size: clamp(1rem, 6vw, 3rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
