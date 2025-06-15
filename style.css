@@ -33,13 +33,14 @@ body {
 .countdown-el {
     min-width: 80px;
     text-align: center;
+    margin: 0 2rem;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     padding: 10px;
 }
 
 .big-text {
-    font-size: clamp(2rem, 12vw, 6rem); /* 🔁 адаптивный размер */
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* 🔁 адаптивный размер */
     font-weight: bold;
     margin: 0 1vw;
     min-width: 60px;
