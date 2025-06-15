@@ -11,21 +11,15 @@
 
 @media (max-width: 480px) {
     .countdown-container {
-        flex-direction: column;
-        gap: 10px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
 
     .big-text {
-        font-size: 3rem;
-        margin: 0;
+        font-size: 5vw;
     }
 
     .countdown-el span {
-        font-size: 1rem;
-    }
-
-    body {
-        overflow: auto;
-        padding: 10px;
+        font-size: 3vw;
     }
 }
