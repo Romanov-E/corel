@@ -39,7 +39,7 @@ body {
 }
 
 .big-text {
-    font-size: clamp(4rem, 8vw, 8rem); /* 🔁 адаптивный размер */
+    font-size: clamp(2rem, 20vw, 12rem); /* 🔁 адаптивный размер */
     font-weight: bold;
     margin: 0 1vw;
     min-width: 60px;
