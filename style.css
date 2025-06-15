@@ -31,10 +31,10 @@ body {
 .big-text {
     color: white;
     font-weight: bold;
-    font-size: 6rem;
+    font-size: 6vw; /* вместо фиксированных rem — зависит от ширины экрана */
     line-height: 1;
-    margin: 0 2rem;
-    min-width: 100px;
+    margin: 0 1vw;
+    min-width: 60px;
 }
 
 .countdown-el {
