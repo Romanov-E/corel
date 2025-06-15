@@ -24,7 +24,7 @@ body {
   position: relative;
   background-color: rgba(0, 0, 0, 0.4); /* черный, 50% прозрачности */
   height: 100px; /* регулируй ширину по вкусу */
-  width: 100%; /* во всю ширину экрана или контейнера */
+  width: 100vw; /* во всю ширину экрана или контейнера */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ body {
 
 .text {
   color: white;
-  font-size: 36px;
+  font-size: clamp(6rem, 12vw, 8rem);
   font-weight: bold;
   z-index: 1;
 }
