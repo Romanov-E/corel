@@ -1,5 +1,31 @@
-@media only screen and (max-width: 480px){
-    .wrapper{
-        width: 320px;
+@media (max-width: 768px) {
+    .big-text {
+        font-size: 4rem;
+        margin: 0 1rem;
+    }
+
+    .countdown-el span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .big-text {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .countdown-el span {
+        font-size: 1rem;
+    }
+
+    body {
+        overflow: auto;
+        padding: 10px;
     }
 }
