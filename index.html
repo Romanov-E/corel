@@ -14,6 +14,16 @@
     <script src="script.js" defer></script>
 </head>
 
+<script>
+  function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  setViewportHeight();
+  window.addEventListener('resize', setViewportHeight);
+</script>
+    
 <body>
     <!--<h1>COREL</h1>-->
     <div class="banner">
