@@ -31,7 +31,7 @@ body {
 .big-text {
     color: white;
     font-weight: bold;
-    font-size: 6vw; /* вместо фиксированных rem — зависит от ширины экрана */
+    font-size: clamp(2rem, 6vw, 6rem); /* Гибкий размер */
     line-height: 1;
     margin: 0 1vw;
     min-width: 60px;
