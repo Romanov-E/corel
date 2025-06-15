@@ -3,44 +3,48 @@
 }
 
 body {
-    overflow: hidden;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: 2px 2px 5px #000;
     background-image: url("./corl.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 20px;
+    overflow-x: hidden;
 }
 
 .countdown-container {
     display: flex;
-    flex-wrap: nowrap; /* запрет на перенос */
+    flex-wrap: nowrap;         /* 🔒 запрет на перенос */
     justify-content: center;
-    overflow-x: auto;   /* если не влезает — прокрутка */
-    gap: 10px;
+    overflow-x: auto;          /* ✅ горизонтальная прокрутка при необходимости */
+    gap: 20px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.countdown-el {
+    min-width: 80px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .big-text {
-    color: white;
+    font-size: clamp(2rem, 6vw, 6rem); /* 🔁 адаптивный размер */
     font-weight: bold;
-    font-size: clamp(2rem, 6vw, 6rem); /* Гибкий размер */
-    line-height: 1;
     margin: 0 1vw;
     min-width: 60px;
 }
 
-.countdown-el {
-    text-align: center;
-}
-
 .countdown-el span {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
