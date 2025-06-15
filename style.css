@@ -22,9 +22,9 @@ body {
 
 .countdown-container {
     display: flex;
-    flex-wrap: nowrap;         /* 🔒 запрет на перенос */
+    flex-wrap: nowrap;         /* запрет на перенос */
     justify-content: center;
-    overflow-x: auto;          /* ✅ горизонтальная прокрутка при необходимости */
+    overflow-x: hidden;          /* горизонтальная прокрутка при необходимости */
     gap: 20px;
     width: 100%;
     max-width: 100vw;
@@ -33,14 +33,14 @@ body {
 .countdown-el {
     min-width: 80px;
     text-align: center;
-    margin: 0 2rem;
+    margin: 0 1rem;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     padding: 10px;
 }
 
 .big-text {
-    font-size: clamp(2rem, 12vw, 6rem); /* 🔁 адаптивный размер */
+    font-size: clamp(2rem, 12vw, 6rem); /* адаптивный размер */
     font-weight: bold;
     margin: 0 1vw;
     min-width: 60px;
