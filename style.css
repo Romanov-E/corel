@@ -26,19 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-:root {
-  --vh: 1vh;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(var(--vh) * 100);
-  margin-top: -300px;
-}
-
 .banner {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5); /* черный, 50% прозрачности */
@@ -47,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-top: -300px;
 }
 
 .text {
