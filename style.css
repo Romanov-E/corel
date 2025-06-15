@@ -22,9 +22,10 @@ body {
 
 .countdown-container {
     display: flex;
-    flex-wrap: wrap; /* <-- Добавлено для мобильной адаптации */
+    flex-wrap: nowrap; /* запрет на перенос */
     justify-content: center;
-    gap: 20px; /* <-- Чтобы был отступ между элементами */
+    overflow-x: auto;   /* если не влезает — прокрутка */
+    gap: 10px;
 }
 
 .big-text {
