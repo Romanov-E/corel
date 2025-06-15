@@ -40,6 +40,10 @@ body {
 }
 
 .text {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-size: clamp(6rem, 8vw, 8rem);
   font-weight: bold;
