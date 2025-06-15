@@ -26,14 +26,17 @@ body {
     overflow-x: hidden;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100dvh;
+  height: calc(var(--vh) * 100);
 }
-
 
 .banner {
   position: relative;
