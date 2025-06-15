@@ -23,11 +23,12 @@ body {
 .banner {
   position: relative;
   background-color: rgba(0, 0, 0, 0.4); /* черный, 50% прозрачности */
-  height: 100px; /* регулируй ширину по вкусу */
-  width: 100vw; /* во всю ширину экрана или контейнера */
+  height: 150px; 
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .text {
