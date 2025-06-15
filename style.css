@@ -32,7 +32,7 @@ body {
 
 .text {
   color: white;
-  font-size: clamp(6rem, 12vw, 8rem);
+  font-size: clamp(6rem, 8vw, 8rem);
   font-weight: bold;
   z-index: 1;
 }
