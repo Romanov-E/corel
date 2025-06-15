@@ -3,7 +3,6 @@
 }
 
 body {
-    margin: 0;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -52,8 +51,8 @@ body {
 .countdown-el {
     min-width: 80px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    #background-color: rgba(0, 0, 0, 0.5);
+    #border-radius: 10px;
     padding: 10px;
 }
 
