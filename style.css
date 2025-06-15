@@ -22,7 +22,7 @@ body {
 
 .banner {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.4); /* черный, 50% прозрачности */
+  background-color: rgba(0, 0, 0, 0.5); /* черный, 50% прозрачности */
   height: 150px; 
   width: 100vw;
   display: flex;
@@ -52,7 +52,7 @@ body {
 .countdown-el {
     min-width: 80px;
     text-align: center;
-    #background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 10px;
 }
