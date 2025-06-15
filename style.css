@@ -29,7 +29,7 @@ body {
 .banner {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5); /* черный, 50% прозрачности */
-  height: 20vh; 
+  height: 10vh; 
   width: 100vw;
   display: flex;
   flex-wrap: nowrap;
