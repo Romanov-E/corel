@@ -34,8 +34,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -300px;
-  margin-bottom: 200px;
+  margin-top: -200px;
+  margin-bottom: 100px;
 }
 
 .text {
