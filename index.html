@@ -1,43 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обратный отсчет до Карелии</title>
-    <link rel="stylesheet" href="style.css?v=0.2">
-    <link rel="stylesheet" href="normalize.css?v=0.2">
-    <link rel="stylesheet" href="media.css?v=0.2">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
     
 <body>
-    <!--<h1>COREL</h1>-->
-    <div class="banner">
-  <span class="text">C O R E L</span>
-</div>
-    <div class="countdown-container">
-        <div class="countdown-el days-c">
-            <p class="big-text" id="days">0</p>
-            <span>дней</span>
-        </div>
-        <div class="countdown-el hours-c">
-            <p class="big-text" id="hours">0</p>
-            <span>часов</span>
-        </div>
-        <div class="countdown-el mins-c">
-            <p class="big-text" id="mins">0</p>
-            <span>минут</span>
-        </div>
-        <div class="countdown-el seconds-c">
-            <p class="big-text" id="seconds">0</p>
-            <span>секунд</span>
+    <div class="overlay">
+        <header class="banner">
+            <h1>C O R E L</h1>
+        </header>
+
+        <div class="countdown-container">
+            <div class="countdown-el">
+                <p class="big-text" id="days">00</p>
+                <span>дней</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="hours">00</p>
+                <span>часов</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="mins">00</p>
+                <span>минут</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="seconds">00</p>
+                <span>секунд</span>
+            </div>
         </div>
     </div>
-
 </body>
-
 </html>
