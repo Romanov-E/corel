@@ -2,81 +2,99 @@
     box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* запрещает прокрутку */
-}
-
 body {
-    padding: 20px;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    text-shadow: 2px 2px 5px #000;
+    /* Картинка на фон */
     background-image: url("./corl.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон стоит на месте при прокрутке */
+    min-height: 100vh;
+}
+
+/* Затемнение фона, чтобы текст читался лучше */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    overflow-x: hidden;
+    padding: 20px;
+    width: 100%;
 }
 
 .banner {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5); /* черный, 50% прозрачности */
-  height: 12.5vh; 
-  width: 100vw;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: -300px;
-  margin-bottom: 100px;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-.text {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: clamp(3rem, 8vw, 8rem);
-  font-weight: bold;
-  z-index: 1;
+.banner h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
-
 
 .countdown-container {
     display: flex;
-    flex-wrap: nowrap;         /* запрет на перенос */
+    flex-wrap: wrap; /* Разрешаем перенос на маленьких экранах */
     justify-content: center;
-    overflow-x: auto;          /* горизонтальная прокрутка при необходимости */
-    gap: 20px;
-    width: 100%;
-    max-width: 100vw;
-    margin-top: -50px;
+    gap: 30px; /* Отступы между блоками */
+    text-align: center;
 }
 
 .countdown-el {
-    min-width: 80px;
-    text-align: center;
-    #background-color: rgba(0, 0, 0, 0.5);
-    #border-radius: 10px;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Легкая подложка под цифры для читаемости */
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 120px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .big-text {
-    font-size: clamp(2rem, 12vw, 6rem); /* адаптивный размер */
+    font-size: 4rem;
     font-weight: bold;
-    margin: 0 1vw;
-    min-width: 60px;
+    margin: 0;
+    line-height: 1;
 }
 
 .countdown-el span {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- АДАПТИВНОСТЬ (для мобильных) --- */
+@media (max-width: 600px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown-container {
+        gap: 15px;
+    }
+
+    .countdown-el {
+        min-width: 80px; /* Блоки меньше на телефоне */
+        padding: 10px;
+    }
+
+    .big-text {
+        font-size: 2.5rem;
+    }
+
+    .countdown-el span {
+        font-size: 0.9rem;
+    }
 }
