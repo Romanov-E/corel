@@ -3,7 +3,6 @@ const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('mins');
 const secondsEl = document.getElementById('seconds');
 
-// Твоя дата
 const newYears = '04 jul 2026, 06:00:00';
 
 function countdown() {
@@ -12,7 +11,6 @@ function countdown() {
 
     const totalSeconds = (newYearsDate - currentDate) / 1000;
 
-    // Если дата уже прошла, ставим нули
     if (totalSeconds < 0) {
         daysEl.innerHTML = "00";
         hoursEl.innerHTML = "00";
@@ -32,13 +30,12 @@ function countdown() {
     secondsEl.innerHTML = formatTime(seconds);
 }
 
-// Функция для добавления ведущего нуля (05 вместо 5)
 function formatTime(time) {
     return time < 10 ? `0${time}` : time;
 }
 
-// Первичный вызов
 countdown();
 
 setInterval(countdown, 1000);
+
 
