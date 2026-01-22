@@ -4,7 +4,7 @@ const minsEl = document.getElementById('mins');
 const secondsEl = document.getElementById('seconds');
 
 // Твоя дата
-const newYears = '28 jun 2025, 00:00:00';
+const newYears = '04 jul 2026, 06:00:00';
 
 function countdown() {
     const newYearsDate = new Date(newYears);
@@ -41,3 +41,4 @@ function formatTime(time) {
 countdown();
 
 setInterval(countdown, 1000);
+
