@@ -33,7 +33,7 @@ body {
     padding: 20px;
     
 
-    padding-bottom: 15vh; 
+    /*padding-bottom: 15vh;*/ 
 }
 
 .banner {
@@ -42,7 +42,7 @@ body {
 }
 
 .banner h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 0;
     font-weight: bold;
     letter-spacing: 5px;
@@ -72,7 +72,7 @@ body {
 }
 
 .big-text {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     margin: 0;
     line-height: 1;
@@ -112,3 +112,4 @@ body {
         letter-spacing: 0;
     }
 }
+
