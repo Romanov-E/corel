@@ -20,20 +20,16 @@ body {
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
-    
     width: 100%;
-    height: 100vh;
+    /* min-height нужен, чтобы контент не обрезался, если его много */
     min-height: 100dvh; 
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     padding: 20px;
-    
-
-    /*padding-bottom: 15vh;*/ 
+    padding-bottom: 5vh; 
 }
 
 .banner {
@@ -49,6 +45,7 @@ body {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
+/* --- СТИЛИ ТАЙМЕРА --- */
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
@@ -85,12 +82,73 @@ body {
     letter-spacing: 1px;
 }
 
+/* --- СТИЛИ ПОГОДЫ --- */
+.weather-wrapper {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    text-align: center;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.weather-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Точно такой же стиль стекла, как у таймера */
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.weather-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    text-transform: capitalize; /* Первая буква заглавная */
+}
+
+.weather-icon {
+    font-size: 2rem;
+    margin: 5px 0;
+}
+
+.weather-temp {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) --- */
 @media (max-width: 600px) {
     .banner h1 {
         font-size: 2.5rem;
         margin-bottom: 15px;
     }
 
+    /* Таймер в одну строку */
     .countdown-container {
         flex-wrap: nowrap; 
         gap: 8px; 
@@ -112,66 +170,38 @@ body {
         letter-spacing: 0;
     }
 
-    /* --- СТИЛИ ПОГОДЫ --- */
-.weather-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 40px; /* Отступ от таймера */
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-}
+    /* Адаптив Погоды */
+    .weather-wrapper {
+        margin-top: 25px; /* Чуть ближе к таймеру */
+    }
+    
+    .weather-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
 
-.weather-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Тот же стиль, что у таймера */
-    background-color: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(5px);
-    padding: 15px;
-    border-radius: 10px;
-    min-width: 90px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    color: white;
-}
-
-.weather-date {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
-
-.weather-icon {
-    font-size: 2rem; /* Размер эмодзи погоды */
-    margin: 5px 0;
-}
-
-.weather-temp {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Адаптив для мобильных телефонов */
-@media (max-width: 600px) {
     .weather-container {
-        gap: 8px;
-        margin-top: 20px;
+        /* Делаем горизонтальную прокрутку, чтобы влезло 7 дней */
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px; /* Место для скроллбара (если есть) */
+        
+        /* Скрываем скроллбар для красоты (работает в Chrome/Safari) */
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+    }
+    
+    .weather-container::-webkit-scrollbar { 
+        display: none; 
     }
 
     .weather-day {
-        min-width: 70px; /* Чуть меньше на телефоне */
+        min-width: 75px; /* Фиксированная ширина карточки */
         padding: 10px 5px;
-        flex: 1 0 30%; /* Карточки будут по 3 в ряд */
-    }   
+        flex-shrink: 0; /* Запрещаем сжимать карточки, чтобы они скроллились */
+    }
+
     .weather-icon {
         font-size: 1.5rem;
     }
 }
-}
-
-
