@@ -21,7 +21,6 @@ body {
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
-    /* min-height нужен, чтобы контент не обрезался, если его много */
     min-height: 100dvh; 
     
     display: flex;
@@ -45,7 +44,7 @@ body {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-/* --- СТИЛИ ТАЙМЕРА --- */
+/* --- ТАЙМЕР --- */
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
@@ -82,9 +81,10 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- СТИЛИ ПОГОДЫ --- */
+/* --- ПОГОДА --- */
 .weather-wrapper {
-    margin-top: 40px;
+    /* Увеличили отступ для воздуха */
+    margin-top: 80px; 
     width: 100%;
     max-width: 900px;
     display: flex;
@@ -94,7 +94,7 @@ body {
 
 .weather-title {
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     text-align: center;
     font-weight: normal;
@@ -102,8 +102,9 @@ body {
 }
 
 .weather-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    /* Ровно 5 колонок одинаковой ширины */
+    grid-template-columns: repeat(5, 1fr); 
     gap: 15px;
     width: 100%;
 }
@@ -113,21 +114,22 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Точно такой же стиль стекла, как у таймера */
     background-color: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(5px);
-    padding: 15px;
+    padding: 15px 5px; /* Меньше боковых отступов, чтобы влезло */
     border-radius: 10px;
-    min-width: 80px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     color: white;
+    /* Убираем min-width, чтобы блоки сжимались под сетку */
+    min-width: 0; 
 }
 
 .weather-date {
     font-size: 0.9rem;
     opacity: 0.9;
     margin-bottom: 5px;
-    text-transform: capitalize; /* Первая буква заглавная */
+    text-transform: capitalize;
+    white-space: nowrap; /* Чтобы дата не переносилась криво */
 }
 
 .weather-icon {
@@ -148,7 +150,7 @@ body {
         margin-bottom: 15px;
     }
 
-    /* Таймер в одну строку */
+    /* Таймер */
     .countdown-container {
         flex-wrap: nowrap; 
         gap: 8px; 
@@ -170,38 +172,37 @@ body {
         letter-spacing: 0;
     }
 
-    /* Адаптив Погоды */
+    /* Погода */
     .weather-wrapper {
-        margin-top: 25px; /* Чуть ближе к таймеру */
+        margin-top: 50px; /* На телефоне отступ чуть меньше, но все равно большой */
     }
     
     .weather-title {
         font-size: 1.2rem;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .weather-container {
-        /* Делаем горизонтальную прокрутку, чтобы влезло 7 дней */
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px; /* Место для скроллбара (если есть) */
-        
-        /* Скрываем скроллбар для красоты (работает в Chrome/Safari) */
-        scrollbar-width: none; 
-        -ms-overflow-style: none;
-    }
-    
-    .weather-container::-webkit-scrollbar { 
-        display: none; 
+        /* Сохраняем сетку 5 колонок */
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 6px; /* Очень маленький зазор, чтобы влезло в экран */
     }
 
     .weather-day {
-        min-width: 75px; /* Фиксированная ширина карточки */
-        padding: 10px 5px;
-        flex-shrink: 0; /* Запрещаем сжимать карточки, чтобы они скроллились */
+        padding: 10px 2px;
+        border-radius: 6px;
+    }
+    
+    .weather-date {
+        font-size: 0.7rem; /* Уменьшаем шрифт даты */
     }
 
     .weather-icon {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin: 2px 0;
+    }
+
+    .weather-temp {
+        font-size: 0.9rem; /* Уменьшаем шрифт температуры */
     }
 }
