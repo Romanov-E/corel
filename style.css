@@ -52,7 +52,6 @@ body {
     gap: 20px;
     text-align: center;
     
-    /* ШИРИНА: такая же, как у погоды (было 800px) */
     width: 100%;
     max-width: 900px; 
 }
@@ -67,7 +66,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     
-    /* ВЫРАВНИВАНИЕ: блоки растягиваются, чтобы занять всю ширину 900px */
+
     flex: 1; 
     min-width: 120px; 
 }
@@ -86,13 +85,12 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- ПОГОДА --- */
+
 .weather-wrapper {
-    /* ОТСТУП: увеличил с 80px до 120px */
     margin-top: 120px; 
     
     width: 100%;
-    max-width: 900px; /* Ширина совпадает с таймером */
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +107,6 @@ body {
 
 .weather-container {
     display: grid;
-    /* Сетка: 5 колонок одинаковой ширины */
     grid-template-columns: repeat(5, 1fr); 
     gap: 15px;
     width: 100%;
@@ -148,14 +145,12 @@ body {
 }
 
 
-/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) --- */
 @media (max-width: 600px) {
     .banner h1 {
         font-size: 2.5rem;
         margin-bottom: 15px;
     }
 
-    /* Таймер */
     .countdown-container {
         flex-wrap: nowrap; 
         gap: 8px; 
@@ -176,7 +171,6 @@ body {
         letter-spacing: 0;
     }
 
-    /* Погода */
     .weather-wrapper {
         margin-top: 50px; 
     }
@@ -209,3 +203,4 @@ body {
         font-size: 0.9rem; 
     }
 }
+
