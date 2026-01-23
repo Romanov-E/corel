@@ -1,5 +1,5 @@
 /* --- НАСТРОЙКИ --- */
-const NEW_YEARS = '28 jun 2025, 00:00:00';
+const NEW_YEARS = '07 jul 2026, 06:00:00';
 
 // Координаты: Суоярви
 const CITY_LAT = 62.087929; 
@@ -102,3 +102,4 @@ function renderWeather(daily) {
 }
 
 getWeather();
+
