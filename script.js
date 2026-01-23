@@ -1,11 +1,8 @@
-/* --- НАСТРОЙКИ --- */
 const NEW_YEARS = '07 jul 2026, 06:00:00';
 
-// Координаты: Суоярви
 const CITY_LAT = 62.087929; 
 const CITY_LON = 32.373319; 
 
-/* --- ТАЙМЕР --- */
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('mins');
@@ -43,7 +40,6 @@ countdown();
 setInterval(countdown, 1000);
 
 
-/* --- ПОГОДА (Open-Meteo API) --- */
 const weatherContainer = document.getElementById('weather-container');
 
 const weatherIcons = {
@@ -58,7 +54,6 @@ const weatherIcons = {
 
 async function getWeather() {
     try {
-        // Добавил &forecast_days=10 для получения 10 дней
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${CITY_LAT}&longitude=${CITY_LON}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=10`;
         
         const response = await fetch(url);
@@ -74,11 +69,9 @@ async function getWeather() {
 function renderWeather(daily) {
     weatherContainer.innerHTML = ''; 
 
-    // Цикл теперь до 10
     for (let i = 0; i < 10; i++) {
         const dateStr = daily.time[i];
         const maxTemp = Math.round(daily.temperature_2m_max[i]);
-        // const minTemp = Math.round(daily.temperature_2m_min[i]); // Можно вернуть, если нужно
         const code = daily.weathercode[i];
         
         const date = new Date(dateStr);
@@ -101,3 +94,4 @@ function renderWeather(daily) {
 }
 
 getWeather();
+
