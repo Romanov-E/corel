@@ -48,11 +48,11 @@ body {
 .countdown-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Центрируем, если экран огромный */
-    gap: 20px; /* Чуть уменьшил отступ, чтобы было плотнее */
+    justify-content: center;
+    gap: 20px;
     text-align: center;
     
-    /* FIX: Делаем ширину такой же, как у погоды */
+    /* ШИРИНА: такая же, как у погоды (было 800px) */
     width: 100%;
     max-width: 900px; 
 }
@@ -67,9 +67,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     
-    /* FIX: Заставляем блоки растягиваться на всю ширину контейнера */
+    /* ВЫРАВНИВАНИЕ: блоки растягиваются, чтобы занять всю ширину 900px */
     flex: 1; 
-    min-width: 120px; /* Минимальный размер, чтобы не сплющило совсем */
+    min-width: 120px; 
 }
 
 .big-text {
@@ -88,10 +88,11 @@ body {
 
 /* --- ПОГОДА --- */
 .weather-wrapper {
-    margin-top: 80px; 
+    /* ОТСТУП: увеличил с 80px до 120px */
+    margin-top: 120px; 
+    
     width: 100%;
-    /* FIX: Та же ширина, что у таймера */
-    max-width: 900px; 
+    max-width: 900px; /* Ширина совпадает с таймером */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,7 +109,7 @@ body {
 
 .weather-container {
     display: grid;
-    /* 5 равных колонок */
+    /* Сетка: 5 колонок одинаковой ширины */
     grid-template-columns: repeat(5, 1fr); 
     gap: 15px;
     width: 100%;
@@ -162,7 +163,6 @@ body {
 
     .countdown-el {
         min-width: auto; 
-        /* flex: 1 уже задан выше, он наследуется */
         padding: 10px 4px;
     }
 
