@@ -58,7 +58,8 @@ const weatherIcons = {
 
 async function getWeather() {
     try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${CITY_LAT}&longitude=${CITY_LON}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
+        // Добавил &forecast_days=10 для получения 10 дней
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${CITY_LAT}&longitude=${CITY_LON}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=10`;
         
         const response = await fetch(url);
         const data = await response.json();
@@ -73,16 +74,15 @@ async function getWeather() {
 function renderWeather(daily) {
     weatherContainer.innerHTML = ''; 
 
-    for (let i = 0; i < 7; i++) {
+    // Цикл теперь до 10
+    for (let i = 0; i < 10; i++) {
         const dateStr = daily.time[i];
         const maxTemp = Math.round(daily.temperature_2m_max[i]);
-        const minTemp = Math.round(daily.temperature_2m_min[i]);
+        // const minTemp = Math.round(daily.temperature_2m_min[i]); // Можно вернуть, если нужно
         const code = daily.weathercode[i];
         
         const date = new Date(dateStr);
-        // Формат: Пн, Вт...
         const dayName = new Intl.DateTimeFormat('ru-RU', { weekday: 'short' }).format(date);
-        // Формат: 23.01
         const dayDate = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'numeric' }).format(date);
 
         const icon = weatherIcons[code] || '☁️';
@@ -90,7 +90,6 @@ function renderWeather(daily) {
         const card = document.createElement('div');
         card.classList.add('weather-day');
         
-        // Тут собираем карточку
         card.innerHTML = `
             <span class="weather-date">${dayName} ${dayDate}</span>
             <span class="weather-icon">${icon}</span>
@@ -102,4 +101,3 @@ function renderWeather(daily) {
 }
 
 getWeather();
-
