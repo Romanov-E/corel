@@ -20,20 +20,15 @@ body {
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
-    
     width: 100%;
-    height: 100vh;
-    height: 100dvh; 
+    min-height: 100dvh; 
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     padding: 20px;
-    
-
-    /*padding-bottom: 15vh;*/ 
+    padding-bottom: 5vh; 
 }
 
 .banner {
@@ -53,10 +48,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     text-align: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px; 
 }
 
 .countdown-el {
@@ -67,8 +62,9 @@ body {
     backdrop-filter: blur(5px);
     padding: 20px;
     border-radius: 10px;
-    min-width: 120px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    flex: 1; 
+    min-width: 120px; 
 }
 
 .big-text {
@@ -85,6 +81,76 @@ body {
     letter-spacing: 1px;
 }
 
+.separator {
+    width: 100%;
+    max-width: 900px;
+    
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    
+    margin: 50px 0;   
+}
+
+
+.weather-wrapper {
+    margin-top: 0;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    text-align: center;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.weather-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px;
+    width: 100%;
+}
+
+.weather-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    padding: 15px 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: white;
+    min-width: 0; 
+}
+
+.weather-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    white-space: nowrap; 
+}
+
+.weather-icon {
+    font-size: 2rem;
+    margin: 5px 0;
+}
+
+.weather-temp {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
 @media (max-width: 600px) {
     .banner h1 {
         font-size: 2.5rem;
@@ -98,7 +164,6 @@ body {
 
     .countdown-el {
         min-width: auto; 
-        flex: 1; 
         padding: 10px 4px;
     }
 
@@ -111,5 +176,39 @@ body {
         margin-top: 5px;
         letter-spacing: 0;
     }
-}
 
+
+    .separator {
+        margin: 30px 0;
+        height: 4px;
+        opacity: 0.6;
+    }
+
+    .weather-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .weather-container {
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 6px; 
+    }
+
+    .weather-day {
+        padding: 10px 2px;
+        border-radius: 6px;
+    }
+    
+    .weather-date {
+        font-size: 0.7rem; 
+    }
+
+    .weather-icon {
+        font-size: 1.4rem;
+        margin: 2px 0;
+    }
+
+    .weather-temp {
+        font-size: 0.9rem; 
+    }
+}
