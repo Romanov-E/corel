@@ -1,214 +1,53 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-image: url("./corl.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    min-height: 100dvh; 
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратный отсчет до Карелии</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
     
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    padding-bottom: 5vh; 
-}
+<body>
+    <div class="overlay">
+        <header class="banner">
+            <h1>C O R E L</h1>
+        </header>
 
-.banner {
-    margin-bottom: 2rem;
-    text-align: center;
-}
+        <div class="countdown-container">
+            <div class="countdown-el">
+                <p class="big-text" id="days">00</p>
+                <span>дней</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="hours">00</p>
+                <span>часов</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="mins">00</p>
+                <span>минут</span>
+            </div>
+            <div class="countdown-el">
+                <p class="big-text" id="seconds">00</p>
+                <span>секунд</span>
+            </div>
+        </div>
+        
+        <div class="separator"></div>
+        
+        <div class="weather-wrapper">
+            <h2 class="weather-title">Погода в Суоярви</h2>
+            <div id="weather-container" class="weather-container">
+                <p style="width: 100%; text-align: center;">Загрузка...</p>
+            </div>
+        </div>
 
-.banner h1 {
-    font-size: 5rem;
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-.countdown-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 900px; 
-}
-
-.countdown-el {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    flex: 1; 
-    min-width: 120px; 
-}
-
-.big-text {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1;
-}
-
-.countdown-el span {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.separator {
-    width: 100%;
-    max-width: 900px;
-    
-    height: 5px;                     
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    
-    margin: 50px 0;   
-}
-
-
-.weather-wrapper {
-    margin-top: 0;
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.weather-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    text-align: center;
-    font-weight: normal;
-    opacity: 0.9;
-}
-
-.weather-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px;
-    width: 100%;
-}
-
-.weather-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(5px);
-    padding: 15px 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    color: white;
-    min-width: 0; 
-}
-
-.weather-date {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 5px;
-    text-transform: capitalize;
-    white-space: nowrap; 
-}
-
-.weather-icon {
-    font-size: 2rem;
-    margin: 5px 0;
-}
-
-.weather-temp {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-
-@media (max-width: 600px) {
-    .banner h1 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-
-    .countdown-container {
-        flex-wrap: nowrap; 
-        gap: 8px; 
-    }
-
-    .countdown-el {
-        min-width: auto; 
-        padding: 10px 4px;
-    }
-
-    .big-text {
-        font-size: clamp(1.8rem, 9vw, 2.5rem);
-    }
-
-    .countdown-el span {
-        font-size: 0.65rem;
-        margin-top: 5px;
-        letter-spacing: 0;
-    }
-
-
-    .separator {
-        margin: 30px 0;
-        height: 4px;
-        opacity: 0.6;
-    }
-
-    .weather-title {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-
-    .weather-container {
-        grid-template-columns: repeat(5, 1fr); 
-        gap: 6px; 
-    }
-
-    .weather-day {
-        padding: 10px 2px;
-        border-radius: 6px;
-    }
-    
-    .weather-date {
-        font-size: 0.7rem; 
-    }
-
-    .weather-icon {
-        font-size: 1.4rem;
-        margin: 2px 0;
-    }
-
-    .weather-temp {
-        font-size: 0.9rem; 
-    }
-}
+    </div>
+</body>
+</html>
